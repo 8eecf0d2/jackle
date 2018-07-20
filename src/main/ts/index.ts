@@ -20,15 +20,20 @@ export class Jackle {
 		if(!state) {
 			return this._state;
 		}
+		/** update the state with a new one */
 		this._state = Object.assign({}, state);
+
+		/** ensure that the `change()` method is set */
 		if(!this._state.change) {
 			Object.defineProperty(this._state, 'change', { value: this.change.bind(this), enumerable: false });
 		}
+
+		/** run an update */
 		this.update();
 	}
 
 	/**
-	 * Register an parser (redux-like action).
+	 * Register a parser(s) (redux-like action).
 	 */
 	public parser(parsers: Jackle.parser|Jackle.parser[]) {
 		parsers = Array.isArray(parsers) ? parsers : [parsers];
@@ -38,7 +43,7 @@ export class Jackle {
 	}
 
 	/**
-	 * Register a handler (redux-like reducer).
+	 * Register a handler(s) (redux-like reducer).
 	 */
 	public handler(handlers: Jackle.handler|Jackle.handler[]) {
 		handlers = Array.isArray(handlers) ? handlers : [handlers];
@@ -51,27 +56,34 @@ export class Jackle {
 	 * Change the state by calling a chain of handlers initialized by a parser (redux-like dispatch).
 	 */
 	public async change(name: string, input: Jackle.parser.input, event?: Event) {
+		/** if an event is passed in, call the `preventDefault()` method*/
 		if(event) {
 			event.preventDefault();
 		}
+		/** if a parser is registered for this change type, call it */
 		const data = this.parsers[name] ? this.parsers[name](input) : input;
+		/** iterate over the handlers for this change type */
 		for(const handler of this.handlers[name]) {
 			let state: Jackle.state;
 			try {
+				/** set the handlers return value as a _temporary_ state object, passing in the latest state and parsed data */
 				state = await handler(Object.assign({}, this._state), data);
 			} catch(error) {
+				/** if the handler errors, throw it to the caller */
 				throw error;
 			}
+			/** no errors occured, update the state*/
 			this.state(state);
 		}
 	}
 
 	/**
-	 * Register a component.
+	 * Register a component(s).
 	 */
 	public component(components: Jackle.component|Jackle.component[]) {
 		components = Array.isArray(components) ? components : [components];
 		for(const component of components) {
+			/** check the desired element is on the dom */
 			const node = <HTMLElement>document.querySelector(component.selector);
 			if(!node) {
 				throw new Error(`Could not find element ${component.selector}`)
@@ -95,9 +107,14 @@ export class Jackle {
 	 * Update components (dom)
 	 */
 	public update() {
+		/** iterate over the currently registered components */
 		for(const component in this.components) {
+			/** store a frozen copy of the state */
 			const state = Object.freeze(this._state);
-			this.components[component].template(state, this.components[component].node, this.components[component].controller ? this.components[component].controller(state) : undefined);
+			/** if the template has a controller, call it and pass in the frozen state */
+			const controller = this.components[component].controller ? this.components[component].controller(state) : undefined;
+			/** call the template update method and pass in the frozen state, along with the controller (if defined) */
+			this.components[component].template(state, this.components[component].node, controller);
 		}
 	}
 }
