@@ -38,9 +38,11 @@ In Jackle there are a few core modules, the **Parser**, **Handler**, **Component
 
 If you get lost or are confused about how Jackle works it's _highly_ recommended to read the source, Jackle is _less than 200 lines_ of _verbose_ and _commented_ code.
 
-### `jackle.parser(parser: Jackle.parser|Jackle.parser[])`
+### Parser
 
 A **Parser** is similar to an `Action` in redux, it's used to format input and which can be used by a `handler`.
+
+To register a parser use `jackle.parser(parser: Jackle.parser|Jackle.parser[])`.
 
 The example below get's the value of an `input` element.
 
@@ -54,9 +56,11 @@ export const update_temp_parser: Jackle.parser = {
 jackle.parser(update_temp_parser);
 ```
 
-### `jackle.handler(handler: Jackle.handler|Jackle.handler[])`
+### Handler
 
 A **Handler** is similar to a `Reducer` in redux, it's purpose is to change the `state` of the application, it recieves data from a `parser` and decides what needs to change in the `state`.
+
+To register a handler use `jackle.handler(handler: Jackle.handler|Jackle.handler[])`
 
 The example below recieves the return value from the `parser` above, and returns a modified state.
 
@@ -102,9 +106,11 @@ export const update_temp_handler: Jackle.handler = {
 jackle.handler(update_temp_handler);
 ```
 
-### `jackle.change(name: string, data: any)`
+### Change
 
 The `change` method in Jackle is similar to `Dispatch` in redux, it's used to change the state - you can access it directly from a `Jackle` instance or from `state.change()`.
+
+To call the change method use `jackle.change()` or `state.change()`.
 
 If you call the `change` method and a `handler` throws an error, the error will bubble to the caller - so be ready to catch them.
 
@@ -116,9 +122,11 @@ jackle.change('update:temp', document.querySelector('input'));
 // which then calls the update:temp handler
 ```
 
-### `jackle.component(component: Jackle.component|Jackle.component[])`
+### Component
 
 Components are a used to create html, you provide a `selector` value which will be used to bind to a matching element (`document.querySelector(selector)`).
+
+To register a component use `jackle.component(component: Jackle.component|Jackle.component[])`.
 
 The Component `template` property will be called **every** time the state changes, the `template` property can be async and will have three arguments, `state`, `html` and `controller`.
 
