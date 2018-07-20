@@ -9,7 +9,6 @@ export class Jackle {
 	private parsers: Jackle.parser.set = {};
 	private handlers: Jackle.handler.set = {};
 	private components: Jackle.component.set = {};
-	private routes: Jackle.route.set = [];
 
 	constructor() {}
 
@@ -96,14 +95,6 @@ export class Jackle {
 	}
 
 	/**
-	 * Register a route.
-	 */
-	public route(routes: Jackle.route|Jackle.route[]) {
-		routes = Array.isArray(routes) ? routes : [routes];
-		this.routes.push(...routes);
-	}
-
-	/**
 	 * Update components (dom)
 	 */
 	public update() {
@@ -176,21 +167,5 @@ export module Jackle {
 		selector: string;
 		template: Jackle.component.template;
 		controller?: Jackle.component.controller;
-	}
-
-	/** route */
-	export module route {
-		export type func = (state: Jackle.state, context: Jackle.route.context, change: Jackle.change) => void;
-		export interface context {
-			path: string;
-			params: {
-				[param: string]: string;
-			}
-		}
-		export type set = Jackle.route[];
-	}
-	export interface route {
-		path: RegExp;
-		handlers: Jackle.route.func[];
 	}
 }
