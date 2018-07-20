@@ -34,7 +34,7 @@ Additional documentation and guides can be found in [the github wiki](https://gi
 
 ### Overview
 
-In Jackle there are a few core modules, **Parser**, **Handler**, **Component** and **Route**, all modules follow a simple `Object` structure and allow for a lot of flexiblity in regards to how they're composed.
+In Jackle there are a few core modules, **Parser**, **Handler**, **Component**, all modules follow a simple `Object` structure and allow for a lot of flexiblity in regards to how they're composed.
 
 I'm (8eecf0d2) currently learning about [Redux](https://redux.js.org/) and wanted to build a small framework similar to [Jagwah](https://github.com/8eecf0d2/jagwah) but with a more minimal approach and `redux-like` ideas. I'm _not completely sold_ on the immutable wave but it seems interesting enough to give it a crack.
 
