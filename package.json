@@ -12,11 +12,7 @@
 		"clean": "rm -rf dist",
 		"prebuild": "yarn clean",
 		"build": "tsc --project tsconfig.json",
-		"prebuild:test": "yarn clean",
-		"build:test": "tsc --project tsconfig.test.json",
-		"pretest": "yarn build:test",
-		"posttest": "yarn build",
-		"test": "node dist/test/main/ts/index.spec.js"
+		"test": "yarn build"
 	},
 	"author": "8eecf0d2",
 	"license": "ISC",
