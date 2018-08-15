@@ -1,0 +1,22 @@
+{
+  "name": "jackle-example",
+  "version": "0.0.0",
+  "description": "Example usage of Jackle",
+  "main": "dist/bundle.js",
+  "author": "8eecf0d2",
+  "license": "ISC",
+  "scripts": {
+    "watch": "NODE_ENV=development MODE=development webpack --watch --info-verbosity=verbose",
+    "build": "NODE_ENV=development MODE=development webpack",
+    "serve": "NODE_ENV=development MODE=development webpack-serve --config ./webpack.config.js"
+  },
+  "devDependencies": {
+    "ts-loader": "^4.4.2",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-serve": "^2.0.2"
+  },
+  "dependencies": {
+    "jackle": "^0.0.1"
+  }
+}
