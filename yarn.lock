@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-hyperhtml@^2.11.2:
-  version "2.11.2"
-  resolved "https://registry.npmjs.org/hyperhtml/-/hyperhtml-2.11.2.tgz#03b9183b3ea3d80103252ec0c874577e745815b3"
+hyperhtml@^2.15.1:
+  version "2.15.1"
+  resolved "https://registry.yarnpkg.com/hyperhtml/-/hyperhtml-2.15.1.tgz#33bbb5da17e64f4c38d65648e3fbad087eb7e44b"
   dependencies:
     lightercollective "^0.1.0"
 
