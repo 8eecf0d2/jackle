@@ -2,10 +2,52 @@
 # yarn lockfile v1
 
 
-hyperhtml@^2.11.2:
-  version "2.11.2"
-  resolved "https://registry.npmjs.org/hyperhtml/-/hyperhtml-2.11.2.tgz#03b9183b3ea3d80103252ec0c874577e745815b3"
+"@ungap/custom-event@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@ungap/custom-event/-/custom-event-0.1.1.tgz#0a62313086975ae6fef8c4479a92208c2ed9eb4b"
+
+"@ungap/essential-map@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@ungap/essential-map/-/essential-map-0.1.7.tgz#466b181c299f825b1d853901ee88f3ce302b7c71"
+
+"@ungap/essential-weakset@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@ungap/essential-weakset/-/essential-weakset-0.1.2.tgz#0d26af948306db5034659df911268ebfbea5e2b8"
+
+"@ungap/is-array@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@ungap/is-array/-/is-array-0.1.1.tgz#0169cc0bbd6b8ac21e924dbbe1965da2c6850d23"
+
+"@ungap/trim@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@ungap/trim/-/trim-0.1.1.tgz#f956174af66689e64156ee0725f4a040f4b5a098"
+
+"@ungap/weakmap@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@ungap/weakmap/-/weakmap-0.1.4.tgz#7ca55d2cab02639686b2c90e58cf161b8a3c482d"
+
+disconnected@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/disconnected/-/disconnected-0.1.5.tgz#0eb2efd7ef78172abce25c0a55fdab312d63d714"
+
+domdiff@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/domdiff/-/domdiff-2.0.2.tgz#c63535384d8d1f5954d36049a9d6a770d8a50dcb"
   dependencies:
+    "@ungap/essential-map" "^0.1.7"
+
+hyperhtml@^2.18.0:
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/hyperhtml/-/hyperhtml-2.18.0.tgz#a2107a02aae2ec9d708c744ed00a2fbd5fe08098"
+  dependencies:
+    "@ungap/custom-event" "^0.1.1"
+    "@ungap/essential-map" "^0.1.7"
+    "@ungap/essential-weakset" "^0.1.2"
+    "@ungap/is-array" "^0.1.1"
+    "@ungap/trim" "^0.1.1"
+    "@ungap/weakmap" "^0.1.4"
+    disconnected "^0.1.5"
+    domdiff "^2.0.2"
     lightercollective "^0.1.0"
 
 lightercollective@^0.1.0:
