@@ -20,7 +20,7 @@
 		"typescript": "^2.9.0-rc"
 	},
 	"dependencies": {
-		"hyperhtml": "^2.11.2",
+		"hyperhtml": "^2.19.1",
 		"named-regexp": "^0.1.1"
 	},
 	"repository": {
