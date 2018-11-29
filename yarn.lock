@@ -2,10 +2,77 @@
 # yarn lockfile v1
 
 
-hyperhtml@^2.11.2:
-  version "2.11.2"
-  resolved "https://registry.npmjs.org/hyperhtml/-/hyperhtml-2.11.2.tgz#03b9183b3ea3d80103252ec0c874577e745815b3"
+"@ungap/create-content@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@ungap/create-content/-/create-content-0.1.1.tgz#c775dfbe3cd3d2446b06c362c8e35c27409a27e9"
+
+"@ungap/custom-event@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@ungap/custom-event/-/custom-event-0.1.1.tgz#0a62313086975ae6fef8c4479a92208c2ed9eb4b"
+
+"@ungap/essential-map@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@ungap/essential-map/-/essential-map-0.1.7.tgz#466b181c299f825b1d853901ee88f3ce302b7c71"
+
+"@ungap/essential-weakset@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@ungap/essential-weakset/-/essential-weakset-0.1.2.tgz#0d26af948306db5034659df911268ebfbea5e2b8"
+
+"@ungap/import-node@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@ungap/import-node/-/import-node-0.1.0.tgz#9ad7d3af37c2454504b2bd0b63580063c297d5f1"
+
+"@ungap/is-array@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@ungap/is-array/-/is-array-0.1.1.tgz#0169cc0bbd6b8ac21e924dbbe1965da2c6850d23"
+
+"@ungap/template-literal@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@ungap/template-literal/-/template-literal-0.1.0.tgz#cfac1f01f4943527e05264e49d4a4b3549a3307f"
+
+"@ungap/trim@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@ungap/trim/-/trim-0.1.1.tgz#f956174af66689e64156ee0725f4a040f4b5a098"
+
+"@ungap/weakmap@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@ungap/weakmap/-/weakmap-0.1.4.tgz#7ca55d2cab02639686b2c90e58cf161b8a3c482d"
+
+disconnected@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/disconnected/-/disconnected-0.1.5.tgz#0eb2efd7ef78172abce25c0a55fdab312d63d714"
+
+domdiff@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/domdiff/-/domdiff-2.0.2.tgz#c63535384d8d1f5954d36049a9d6a770d8a50dcb"
   dependencies:
+    "@ungap/essential-map" "^0.1.7"
+
+domtagger@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/domtagger/-/domtagger-0.1.4.tgz#2b33b6b1b5fd41a214a9b1a26bcc8eca2c792826"
+  dependencies:
+    "@ungap/create-content" "^0.1.1"
+    "@ungap/essential-map" "^0.1.7"
+    "@ungap/import-node" "^0.1.0"
+    "@ungap/trim" "^0.1.1"
+    "@ungap/weakmap" "^0.1.4"
+
+hyperhtml@^2.19.1:
+  version "2.19.1"
+  resolved "https://registry.yarnpkg.com/hyperhtml/-/hyperhtml-2.19.1.tgz#66e4b5f80e69ac3086d5040c477362859123ed69"
+  dependencies:
+    "@ungap/create-content" "^0.1.1"
+    "@ungap/custom-event" "^0.1.1"
+    "@ungap/essential-map" "^0.1.7"
+    "@ungap/essential-weakset" "^0.1.2"
+    "@ungap/is-array" "^0.1.1"
+    "@ungap/template-literal" "^0.1.0"
+    "@ungap/trim" "^0.1.1"
+    "@ungap/weakmap" "^0.1.4"
+    disconnected "^0.1.5"
+    domdiff "^2.0.2"
+    domtagger "^0.1.4"
     lightercollective "^0.1.0"
 
 lightercollective@^0.1.0:
